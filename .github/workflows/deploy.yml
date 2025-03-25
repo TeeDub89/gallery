@@ -24,4 +24,4 @@ jobs:
         
     - name: Deploy to EC2
       run: |
-        rsync -avz --exclude '.git' --exclude '.github' ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:${{ secrets.EC2_DEPLOY_PATH }}
+        rsync -avz --exclude '.git' --exclude '.github' --ignore-errors ./ ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}:${{ secrets.EC2_DEPLOY_PATH }}
